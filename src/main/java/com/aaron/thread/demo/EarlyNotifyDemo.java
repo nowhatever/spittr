@@ -1,11 +1,11 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
 import java.util.*;
 
-public class EarlyNotify extends Object {
+public class EarlyNotifyDemo extends Object {
 	private List list;
 
-	public EarlyNotify() {
+	public EarlyNotifyDemo() {
 		list = Collections.synchronizedList(new LinkedList());
 	}
 
@@ -47,7 +47,7 @@ public class EarlyNotify extends Object {
 	}
 
 	public static void main(String[] args) {
-		final EarlyNotify en = new EarlyNotify();
+		final EarlyNotifyDemo en = new EarlyNotifyDemo();
 
 		Runnable runA = new Runnable() {
 				public void run() {

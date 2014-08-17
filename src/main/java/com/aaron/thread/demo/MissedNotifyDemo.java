@@ -1,9 +1,9 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-public class MissedNotify extends Object {
+public class MissedNotifyDemo extends Object {
 	private Object proceedLock;
 
-	public MissedNotify() {
+	public MissedNotifyDemo() {
 		print("in MissedNotify()");
 		proceedLock = new Object();
 	}
@@ -38,7 +38,7 @@ public class MissedNotify extends Object {
 	}
 
 	public static void main(String[] args) {
-		final MissedNotify mn = new MissedNotify();
+		final MissedNotifyDemo mn = new MissedNotifyDemo();
 
 		Runnable runA = new Runnable() {
 				public void run() {

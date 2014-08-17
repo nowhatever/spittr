@@ -1,6 +1,54 @@
-package com.aaron.bo;
+package com.aaron.thread.demo;
 
-public class Info{	// 定义信息类
+public class ProducerConsumerDemo {
+	public static void main(String args[]) {
+		Info info = new Info(); // 实例化Info对象
+		Producer pro = new Producer(info); // 生产者
+		Consumer con = new Consumer(info); // 消费者
+		new Thread(pro).start();
+		// 启动了生产者线程后，再启动消费者线程
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		new Thread(con).start();
+	}
+}
+
+class Consumer implements Runnable{
+	private Info info = null ;
+	public Consumer(Info info){
+		this.info = info ;
+	}
+	public void run(){
+		for(int i=0;i<10;i++){
+			this.info.get() ;
+		}
+	}
+}
+
+class Producer implements Runnable{	// 通过Runnable实现多线程
+	private Info info = null ;		// 保存Info引用
+	public Producer(Info info){
+		this.info = info ;
+	}
+	public void run(){
+		boolean flag = true ;	// 定义标记位
+		for(int i=0;i<10;i++){
+			if(flag){
+				this.info.set("姓名--1","内容--1") ;	// 设置名称
+				flag = false ;
+			}else{
+				this.info.set("姓名--2","内容--2") ;	// 设置名称
+				flag = true ;
+			}
+		}
+	}
+}
+
+class Info{	// 定义信息类
 	private String name = "name";//定义name属性，为了与下面set的name属性区别开
 	private String content = "content" ;// 定义content属性，为了与下面set的content属性区别开
 	private boolean flag = true ;	// 设置标志位,初始时先生产
@@ -53,5 +101,4 @@ public class Info{	// 定义信息类
 		return this.content ;
 	}
 }
-
 

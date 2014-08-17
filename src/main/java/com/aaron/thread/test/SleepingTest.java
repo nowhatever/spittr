@@ -1,11 +1,11 @@
-package com.aaron.thread;
+package com.aaron.thread.test;
 
 /**
  * 验证线程在sleeping的时候不会被唤醒，只能被Interrupted
  * @author aaron
  *
  */
-public class Sleeping implements Runnable {
+public class SleepingTest implements Runnable {
 
 	public Object lock = new Object();
 	
@@ -20,7 +20,7 @@ public class Sleeping implements Runnable {
 	
 	public static void main(String[] args) {
 
-		Sleeping sp = new Sleeping();
+		SleepingTest sp = new SleepingTest();
 		Thread thread = new Thread(sp);
 		thread.run();
 		

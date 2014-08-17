@@ -1,6 +1,11 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-public class DeprecatedSuspendResume extends Object implements Runnable{
+/**
+ * 已经deprecated的Suspend和Resume方法
+ * @author aaron
+ *
+ */
+public class DeprecatedSuspendResumeDemo extends Object implements Runnable{
 
 	//volatile关键字，表示该变量可能在被一个线程使用的同时，被另一个线程修改
 	private volatile int firstVal;
@@ -42,7 +47,7 @@ public class DeprecatedSuspendResume extends Object implements Runnable{
 	}
 
 	public static void main(String[] args){
-		DeprecatedSuspendResume dsr = new DeprecatedSuspendResume();
+		DeprecatedSuspendResumeDemo dsr = new DeprecatedSuspendResumeDemo();
 		Thread t = new Thread(dsr);
 		t.start();
 

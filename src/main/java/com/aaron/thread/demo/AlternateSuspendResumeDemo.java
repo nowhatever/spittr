@@ -1,6 +1,11 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-public class AlternateSuspendResume extends Object implements Runnable {
+/**
+ * 通过加标志位来控制是否挂起线程
+ * @author aaron
+ *
+ */
+public class AlternateSuspendResumeDemo extends Object implements Runnable {
 
 	private volatile int firstVal;
 	private volatile int secondVal;
@@ -71,8 +76,8 @@ public class AlternateSuspendResume extends Object implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		AlternateSuspendResume asr = 
-				new AlternateSuspendResume();
+		AlternateSuspendResumeDemo asr = 
+				new AlternateSuspendResumeDemo();
 
 		Thread t = new Thread(asr);
 		t.start();

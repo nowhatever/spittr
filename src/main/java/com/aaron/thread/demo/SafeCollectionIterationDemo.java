@@ -1,8 +1,13 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
 import java.util.*;
 
-public class SafeCollectionIteration extends Object {
+/**
+ * 多线程环境安全操作集合
+ * @author aaron
+ *
+ */
+public class SafeCollectionIterationDemo extends Object {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		//为了安全起见，仅使用同步列表的一个引用，这样可以确保控制了所有访问

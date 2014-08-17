@@ -1,13 +1,13 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-public class Deadlock extends Object {
+public class DeadlockDemo extends Object {
 	private String objID;
 
-	public Deadlock(String id) {
+	public DeadlockDemo(String id) {
 		objID = id;
 	}
 
-	public synchronized void checkOther(Deadlock other) {
+	public synchronized void checkOther(DeadlockDemo other) {
 		print("entering checkOther()");
 		try {
 			Thread.sleep(2000);
@@ -39,8 +39,8 @@ public class Deadlock extends Object {
 	}
 
 	public static void main(String[] args) {
-		final Deadlock obj1 = new Deadlock("obj1");
-		final Deadlock obj2 = new Deadlock("obj2");
+		final DeadlockDemo obj1 = new DeadlockDemo("obj1");
+		final DeadlockDemo obj2 = new DeadlockDemo("obj2");
 
 		Runnable runA = new Runnable() {
 			public void run() {

@@ -1,12 +1,17 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-public class InterruptThread implements Runnable {
+/**
+ * 简单的循环同步通知demo
+ * @author aaron
+ *
+ */
+public class WaitNotifyDemo implements Runnable {
 
 	private String name;
 	private Object prev;
 	private Object self;
 
-	private InterruptThread(String name, Object prev, Object self) {
+	private WaitNotifyDemo(String name, Object prev, Object self) {
 		this.name = name;
 		this.prev = prev;
 		this.self = self;
@@ -40,9 +45,9 @@ public class InterruptThread implements Runnable {
 		Object a = new Object();
 		Object b = new Object();
 		Object c = new Object();
-		InterruptThread pa = new InterruptThread("A", c, a);
-		InterruptThread pb = new InterruptThread("B", a, b);
-		InterruptThread pc = new InterruptThread("C", b, c);
+		WaitNotifyDemo pa = new WaitNotifyDemo("A", c, a);
+		WaitNotifyDemo pb = new WaitNotifyDemo("B", a, b);
+		WaitNotifyDemo pc = new WaitNotifyDemo("C", b, c);
 
 		new Thread(pa).start();
 		new Thread(pb).start();

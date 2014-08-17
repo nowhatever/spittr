@@ -1,6 +1,6 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-class MyThread extends Thread{
+class ThreadBasicDemo extends Thread{
 	private int ticket = 5;
 	public void run(){
 		for (int i=0;i<10;i++)
@@ -12,8 +12,8 @@ class MyThread extends Thread{
 	}
 	
 	public static void main(String[] args){
-		new MyThread().start();
-		new MyThread().start();
-		new MyThread().start();
+		new ThreadBasicDemo().start();
+		new ThreadBasicDemo().start();
+		new ThreadBasicDemo().start();
 	}
 }

@@ -1,4 +1,4 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
 /**
  * 感觉加了标志位很蹩脚，
@@ -7,12 +7,12 @@ package com.aaron.thread;
  * @author aaron
  *
  */
-public class MissedNotifyFix extends Object {
+public class MissedNotifyFixDemo extends Object {
 	private Object proceedLock;
 	//该标志位用来指示线程是否需要等待
 	private boolean okToProceed;
 
-	public MissedNotifyFix() {
+	public MissedNotifyFixDemo() {
 		print("in MissedNotify()");
 		proceedLock = new Object();
 		//先设置为false
@@ -60,7 +60,7 @@ public class MissedNotifyFix extends Object {
 	}
 
 	public static void main(String[] args) {
-		final MissedNotifyFix mnf = new MissedNotifyFix();
+		final MissedNotifyFixDemo mnf = new MissedNotifyFixDemo();
 
 		Runnable runA = new Runnable() {
 				public void run() {

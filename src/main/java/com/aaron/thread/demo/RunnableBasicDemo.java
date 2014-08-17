@@ -1,6 +1,6 @@
-package com.aaron.thread;
+package com.aaron.thread.demo;
 
-class MyRunnable implements Runnable{
+class RunnableBasicDemo implements Runnable{
 	private int ticket = 5;
 	public void run(){
 		for (int i=0;i<10;i++)
@@ -12,7 +12,7 @@ class MyRunnable implements Runnable{
 	}
 	
 	public static void main(String[] args){
-		MyThread my = new MyThread();
+		ThreadBasicDemo my = new ThreadBasicDemo();
 		new Thread(my).start();
 		new Thread(my).start();
 		new Thread(my).start();
